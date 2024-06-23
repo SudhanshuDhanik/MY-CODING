@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.text.Font?>
+
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <panes>
+    <TitledPane animated="false" text="or bhaiii" textFill="#1e750e">
+         <font>
+            <Font name="Bookshelf Symbol 7" size="12.0" />
+         </font></TitledPane>
+    <TitledPane animated="false" prefHeight="418.0" prefWidth="481.0" rotate="17.2" text="or bhai sonu" textFill="#d15656" textOverrun="LEADING_WORD_ELLIPSIS" translateX="100.0" translateY="1.0">
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font>
+         <padding>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+         </padding>
+         <rotationAxis>
+            <Point3D x="1.0" z="1.0" />
+         </rotationAxis></TitledPane>
+  </panes>
+</Accordion>

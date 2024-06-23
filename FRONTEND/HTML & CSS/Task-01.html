@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(228, 227, 227);
+            padding: 0 50px;
+        }
+
+        .heading {
+            margin-top: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            max-width: 1300px;
+
+        }
+
+        .card {
+            width: 23%;
+            text-align: center;
+            border: 1px solid grey;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .line {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            border-bottom: 1px solid grey;
+            padding-bottom: 6px;
+        }
+
+        .image-box {
+            width: 100px;
+            margin: auto;
+        }
+
+        /* parent with tag for specific element*/
+        .image-box img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .post {
+            font-size: 20px;
+            font-weight: 500;
+            color: grey;
+        }
+
+        .no-border {
+            border-bottom: none;
+        }
+
+        .star {
+            color: goldenrod;
+        }
+
+        /* Resposiveness  */
+        /* To make responsive websites */
+        @media (max-width:1220px) {
+            .post {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width:924px) {
+            .wrap {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 90%;
+                margin: auto;
+                margin-bottom: 30px;
+            }
+
+            .heading {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1 style="margin-bottom: 10px;">Popular Instructors</h1>
+        <p>Popular instructor in JavaScript Courses.</p>
+    </div>
+    <div class="wrap">
+
+        <div class="card">
+            <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"></div>
+            <h2>Wade Warren</h2>
+            <h6 class="post">Web Developer, Designer</h6>
+            <div class="line">
+                <div class="text">Students</div>
+                <div class="number">50473</div>
+            </div>
+            <div class="line">
+                <div class="text">Instructor Rating</div>
+                <div class="number star">4.1&starf;</div>
+            </div>
+            <div class="line no-border">
+                <div class="text">Courses</div>
+                <div class="number">12</div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"></div>
+            <h2>Dianna Smiley</h2>
+            <h6 class="post">Engineer , Architect</h6>
+            <div class="line">
+                <div class="text">Students</div>
+                <div class="number">10004</div>
+            </div>
+            <div class="line">
+                <div class="text">Instructor Rating</div>
+                <div class="number star">4.5&starf;</div>
+            </div>
+            <div class="line no-border">
+                <div class="text">Courses</div>
+                <div class="number">42</div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"></div>
+            <h2>Esther Howard</h2>
+            <h6 class="post">Developer and Instructor</h6>
+            <div class="line">
+                <div class="text">Students</div>
+                <div class="number">26060</div>
+            </div>
+            <div class="line">
+                <div class="text">Instructor Rating</div>
+                <div class="number star">4.3&starf;</div>
+            </div>
+            <div class="line no-border">
+                <div class="text">Courses</div>
+                <div class="number">13</div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"></div>
+            <h2>Guy Hawkins</h2>
+            <h6 class="post">Professional Web Developer</h6>
+            <div class="line">
+                <div class="text">Students</div>
+                <div class="number">23345</div>
+            </div>
+            <div class="line">
+                <div class="text">Instructor Rating</div>
+                <div class="number star">4.8&starf;</div>
+            </div>
+            <div class="line no-border">
+                <div class="text">Courses</div>
+                <div class="number">2</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

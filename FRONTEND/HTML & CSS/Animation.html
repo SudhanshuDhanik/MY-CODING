@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          div{
+            /*use delay=0s to start animation automatically
+            no need of hover*/
+            
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          top:300px;/*we can use margin also*/
+          left:100px;
+          background-color: yellow;
+          color: black;
+          /*animation-name: colorAnimate;
+          animation-duration:3s;
+          animation-timing-function:steps(5);
+          animation-delay:5s;
+          animation-iteration-count:3;
+          animation-direction: alternate-reverse;
+           /*use this for dj light  
+          animation-duration:0.5s; animation-iteration-count:infinite; */
+          
+          /*Alter method using shorthand*/
+          animation:colorAnimate 5s ease-out 3s 3 alternate-reverse forwards;      
+          }
+        @keyframes colorAnimate {
+            from{background-color: rgb(4, 4, 43);}
+            to{background-color: red;}
+            
+            from{left:0px;}
+            to{left:300px;}
+
+            /*we can combine %block and (from,to) block 
+            e.x/
+            0%{
+                background-color: yellow;
+                left:0px; 
+            }*/
+             
+            0%{
+                background-color: rgb(242, 240, 242);
+            }
+            30%{
+                background-color: cornflowerblue;
+            }
+            50%{
+                background-color: chocolate;
+            }
+            100%{
+                background-color: rgb(21, 224, 79);
+            }
+        }
+    </style>
+ </head>
+ <body>
+    <div>
+        this is box
+    </div>
+ </body>
+ </html>

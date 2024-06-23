@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //let is same like var but its scope is limited which is helpful in memory save
+        let arr = ["FAn", "sonu", 34, true, null]
+        console.log(arr.length)
+        console.log(arr)
+        arr.pop();//removes last element or LIFO 
+        arr.push("dhanik")//adds element on last/top
+        arr.shift()//removes first element or FIFO
+        arr.unshift("Sudhanshu")//adds element on first/bottom
+        console.log(arr)
+        
+        console.log(arr.toString())
+
+        console.log(arr.sort())
+        //this sort method firstly covert them into  string and sort them according to dictionary
+        d = [1, 1676, 43, 293, 2]
+        console.log(d.sort())
+
+    </script>
+</body>
+
+</html>

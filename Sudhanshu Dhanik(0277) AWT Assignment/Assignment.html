@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management System</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .product-list {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid bg-light">
+  <h1 class=" text-center p-3 bg-info">Inventory Management System</h1>
+  <!-- Product List -->
+  <div class="product-list">
+    <h3 class="display">Product List</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr class="bg-dark text-white">
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>SKU</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      
+      <tbody id="productList">
+        <!-- Products will be dynamically added here -->
+      </tbody>
+    </table>
+     <!-- Add Product Button -->
+  <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addProductModal">Add Product</button>
+  </div>
+</div>
+
+<!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mark" id="addProductModalLabel" >Add Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Form to add a new product -->
+        <form id="addProductForm" class="bg-light text-warning lead">
+          <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" id="productName" required>
+          </div>
+          <div class="form-group">
+            <label for="productDescription">Description</label>
+            <textarea class="form-control" id="productDescription" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="productSKU">SKU</label>
+            <input type="text" class="form-control" id="productSKU" required>
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Price</label>
+            <input type="number" class="form-control" id="productPrice" required>
+          </div>
+          <div class="form-group">
+            <label for="productQuantity">Quantity</label>
+            <input type="number" class="form-control" id="productQuantity" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="addProductBtn">Add Product</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+  $(document).ready(function(){
+    $("#addProductBtn").click(function(){
+      // Retrieve input values
+      var productName = $("#productName").val();
+      var productDescription = $("#productDescription").val();
+      var productSKU = $("#productSKU").val();
+      var productPrice = $("#productPrice").val();
+      var productQuantity = $("#productQuantity").val();
+      
+      // Validate input values (e.g., check for empty fields)
+      if(productName === "" || productDescription === "" || productSKU === "" || productPrice === "" || productQuantity === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+      
+      // Check if product with the same SKU already exists
+      var existingProduct = getProductBySKU(productSKU);
+      if (existingProduct) {
+        // If product already exists, update its quantity
+        var newQuantity = parseInt(existingProduct.quantity) + parseInt(productQuantity);
+        updateProductListItem(existingProduct.sku, newQuantity);
+      } else {
+        // If product doesn't exist, add it to the list
+        var newProduct = {
+          name: productName,
+          description: productDescription,
+          sku: productSKU,
+          price: productPrice,
+          quantity: productQuantity
+        };
+        addProductToList(newProduct);
+      }
+      
+      // Clear the form fields
+      $("#addProductForm")[0].reset();
+      
+      // Close the modal
+      $("#addProductModal").modal("hide");
+      
+      // Check for low stock
+      if (productQuantity < 10) {
+        alert("Low stock alert for " + productName);
+      }
+    });
+    
+    // Function to add a new product to the list
+    function addProductToList(product) {
+      var productRow = `
+        <tr id="product-${product.sku}">
+          <td>${product.name}</td>
+          <td>${product.description}</td>
+          <td>${product.sku}</td>
+          <td>$${product.price}</td>
+          <td>${product.quantity}</td>
+        </tr>
+      `;
+      $("#productList").append(productRow);
+    }
+    
+    // Function to update the quantity of an existing product in the list
+    function updateProductListItem(sku, newQuantity) {
+      $("#product-" + sku + " td:last-child").text(newQuantity);
+    }
+    
+    // Function to get a product by SKU
+    function getProductBySKU(sku) {
+      var products = $("tbody#productList tr");
+      for (var i = 0; i < products.length; i++) {
+        var productSKU = $(products[i]).attr("id").split("-")[1];
+        if (productSKU === sku) {
+          return {
+            name: $(products[i]).find("td:eq(0)").text(),
+            description: $(products[i]).find("td:eq(1)").text(),
+            sku: sku,
+            price: $(products[i]).find("td:eq(3)").text().substring(1),
+            quantity: $(products[i]).find("td:eq(4)").text()
+          };
+        }
+      }
+      return null;
+    }
+    $("input").css("background-color", "cyan");
+    $("textarea").css("background-color", "cyan");
+
+  });
+</script>
+
+</body>
+</html>

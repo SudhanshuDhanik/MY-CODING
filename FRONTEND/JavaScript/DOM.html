@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript tutorials</title>
+    <style>
+        .text{
+            color:greenyellow
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Welcome to javascript</h1>
+        <h2>guysss</h2>
+    </div> <button id="click">Click me</button>
+    <script>
+        //DOM - Document object Mode
+        //used to show HTML dynamically
+        let elem = document.getElementById('click');
+        console.log(elem)
+        let elemClass=document.getElementsByClassName('container')
+        console.log(elemClass)
+        elemClass[0].style.background="cyan"
+        elemClass[0].classList.add("text")//it will make container class' text green  yellow
+        console.log(elem.innerHTML);
+        console.log(elem.innerText);
+        console.log(elemClass[0].innerHTML);
+        console.log(elemClass[0].innerText);
+        tn=document.getElementsByTagName("div")
+        console.log(tn)
+        newElem=document.createElement('p');
+        newElem.innerText="This is new created paragraph"
+        tn[0].appendChild(newElem)
+console.log(document.location) 
+console.log(document.title) 
+console.log(document.URL) 
+console.log(document.domain)
+//console.log(document.images) 
+//console.log(document.links)
+// console.log(document.forms)
+    sel=document.querySelector('.container')
+    console.log(sel)
+    sel=document.querySelectorAll('.container')
+    console.log(sel)
+    
+    </script>
+
+</body>
+
+</html>

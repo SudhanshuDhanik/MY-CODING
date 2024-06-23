@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("adidas-football-world-cup-bq2aq9nccb5a43pi.jpg");
+   background-attachment: fixed;    
+   background-size: 100% 100%; ;             
+        }
+      .google{
+     display: flex;
+       justify-content: center;
+       align-items: center;
+       margin-top: 250px;     
+        font-size: 2rem;
+        color:#EEEEEE;
+        text-shadow: 5px 5px 2px burlywood;
+        transition: all 2s ease 0s;
+        animation: google 0.5s ease-in 0s infinite;
+      }
+      .search-bar{
+        box-shadow: 3px 3px paleturquoise;
+        width: 600px;
+        height: 50px;
+        margin: 10px 530px;
+        background-color:#ffffff;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        animation: searchbar 2s ease-in-out 0s infinite;
+      }
+      .search-icon{
+        margin: 10px;
+        border: none;
+      }
+      .search-input{
+        width: 530px;
+        height: 100%;
+        border: none;
+      }
+      /*Links to other*/
+      .icons{
+        width: 560px;
+        height: 50px;
+        margin: 20px 540px;
+        display: flex;
+        align-items: center;  
+        justify-content: space-between;
+      }
+      .icons i{
+        animation: animation 2s ease-out 0s infinite;
+        font-size: 20px;
+        background-color: #f1f3f4;
+        height: 50px;
+        width: 50px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       border-radius: 50%;
+      }
+      a{
+        text-decoration: none;
+      }
+      .icon1 i{
+        background-color:plum !important;
+        color: black;
+      }.icon2 i{
+        color:hsl(358, 100%, 50%);
+      }.icon3 i{
+        background-color:hsla(97, 74%, 42%, 0.933) !important;
+        color: #fff;
+      }
+      .icon4 i{
+        color:#000;
+        background-color: yellow !important;
+      }
+      .icon-name{
+      font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+        font-size: 13px;
+          color: #f8f9fa;
+        font-weight: 400;
+      }
+      .google:hover{
+        transform: rotate(360deg);
+      }
+      .icon1:hover{
+        transform: scale(2);
+      }.icon2:hover{
+        transform: scale(2);
+      }.icon3:hover{
+        transform: scale(2);
+      }.icon4:hover{
+        transform: scale(2);
+      }
+      @keyframes animation{
+         from{transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+        0%{
+          background-color: #EEEEEE;
+      }
+     
+      100%{
+          background-color:beige;
+      }
+      }
+      @keyframes google{
+        0%{ 
+          color: yellow;
+      }
+      30%{
+          color: cornflowerblue
+      }
+      50%{  
+          color: chocolate;
+      }
+      100%{  
+          color: red;
+      }
+      
+      }
+     @keyframes searchbar{
+      from{transform: skew(45deg);}
+      to{transform: skew(0deg);}
+     }

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(228, 225, 225);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 50px;
+        }
+
+        .card {
+            border: 1px solid grey;
+            width: 20%;
+            background-color: white;
+        }
+
+        .top {
+            background-color: rgb(215, 160, 58);
+        }
+
+        .js {
+            text-align: center;
+            padding: 40px 0px;
+            /*Margin ka use ni ho para*/
+        }
+
+        .h1 {
+            background-color: aliceblue;
+            max-width: fit-content;
+            margin: auto;
+        }
+
+        .info {
+            margin: 10px;
+        }
+
+        .content {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        .time {
+            margin-right: 50px;
+        }
+
+        .image-box {
+            width: 40px;
+            display: flex;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .profile {
+            border-top: 1px solid rgb(244, 238, 238);
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding-top: 20px;
+        }
+
+        .profile-left {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        @media(max-width:1093px) {
+            .card {
+                width: 23%;
+                font-size: 11px;
+            }
+            .heading{
+                font-size: 13px;
+            }
+        }
+        @media(max-width:796px){
+            .wrap{
+                flex-direction: column;
+            }
+            .card{
+                width: 100%;
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+            .heading{
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1 style="margin-bottom: 10px;">Free JavaScript Lessons</h1>
+        <h4>Bite-sized learning in minutes</h4>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <div class="top">
+                <div class="js">
+                    <div class="h1">
+                        <h1>JS</h1>
+                    </div>
+                    <h4>JavaScript</h4>
+                </div>
+            </div>
+            <div class="info">
+                <div class="bio">
+                    Creating a Custom Event in JavaScript</div>
+                <div class="content">
+                    <p class="time">3h 5m</p>
+                    <p>Beginner</p>
+                </div>
+                &starf; &starf; &starf; &starf; &star; 4.5(9,300)
+                <div class="profile">
+                    <div class="profile-left">
+                        <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"> </div>
+                        <div class="name">Morris Mccoy</div>
+                    </div>
+                    <div class="profile-right">
+                        &#9200;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="top">
+                <div class="js">
+                    <div class="h1">
+                        <h1>JS</h1>
+                    </div>
+                    <h4>JavaScript</h4>
+                </div>
+            </div>
+            <div class="info">
+                <div class="bio">
+                    Creating a Custom Event in JavaScript</div>
+                <div class="content">
+                    <p class="time">3h 5m</p>
+                    <p>Beginner</p>
+                </div>
+                &starf; &starf; &starf; &starf; &star; 4.5(9,300)
+                <div class="profile">
+                    <div class="profile-left">
+                        <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"> </div>
+                        <div class="name">Morris Mccoy</div>
+                    </div>
+                    <div class="profile-right">
+                        &#9200;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="top">
+                <div class="js">
+                    <div class="h1">
+                        <h1>JS</h1>
+                    </div>
+                    <h4>JavaScript</h4>
+                </div>
+            </div>
+            <div class="info">
+                <div class="bio">
+                    Creating a Custom Event in JavaScript</div>
+                <div class="content">
+                    <p class="time">3h 5m</p>
+                    <p>Beginner</p>
+                </div>
+                &starf; &starf; &starf; &starf; &star; 4.5(9,300)
+                <div class="profile">
+                    <div class="profile-left">
+                        <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"> </div>
+                        <div class="name">Morris Mccoy</div>
+                    </div>
+                    <div class="profile-right">
+                        &#9200;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="top">
+                <div class="js">
+                    <div class="h1">
+                        <h1>JS</h1>
+                    </div>
+                    <h4>JavaScript</h4>
+                </div>
+            </div>
+            <div class="info">
+                <div class="bio">
+                    Creating a Custom Event in JavaScript</div>
+                <div class="content">
+                    <p class="time">3h 5m</p>
+                    <p>Beginner</p>
+                </div>
+                &starf; &starf; &starf; &starf; &star; 4.5(9,300)
+                <div class="profile">
+                    <div class="profile-left">
+                        <div class="image-box"><img src="https://i.postimg.cc/FRSpLHfT/avatar-111.jpg"> </div>
+                        <div class="name">Morris Mccoy</div>
+                    </div>
+                    <div class="profile-right">
+                        &#9200;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

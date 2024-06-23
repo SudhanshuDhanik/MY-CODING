@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>This is my Body </p>
+    <p>This is my Body 2</p>
+    <p>This is my Body 3</p>
+    <h1 class="h">Double click me to hide</h1>
+    <div id="p1">Hover over me</div>
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
+
+    <button id='but'>Toggle now</button>
+    <div id='wiki'>
+        Code With Harry(1770–3854) was the first person born in British America to be ordained a Catholic priest.
+        Originally from the colonial Province of Maryland, he became influential in the establishment of Catholicism in
+        Washington, D.C. through his parochial service and founding of several educational institutions. He was the
+        second pastor of St. Patrick's Church, the President of Georgetown College (later known as Georgetown
+        University), and the head of the Washington Catholic Seminary, which became Gonzaga College High School, in
+        addition to being co-founder and president of the Washington Library Company, the first public library in the
+        District of Columbia. He founded several orphanages, schools, and parishes, and was co-director of the District
+        of Columbia Public Schools. In 1832 he officiated at the wedding of a French diplomat and Mary Anne Lewis, a
+        ward of President Andrew Jackson, in the first Catholic ceremony to be held in the White House.
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //Only Execute after execution of every line of html
+        console.log("We are using JQuery");
+        // $('selector').action()
+        $('p').click(function () {
+            //click on all P element
+            console.log('You clicked on P')
+            $(this).hide();
+            // $('#id').hide();
+            // $('.class').hide();
+        });
+        // Events in jQuery
+        // Mouse events = click, dblclick, mouseenter, mouseleave
+        // KeyboardEvent = keypress, keydown, MediaKeyStatusMap
+        // form events = submit, change, focus, blur
+        // document/window events = load, resize, scroll, unload
+
+        // demoing the on method
+        $('p').on(
+            {
+                click: function () {
+                    console.log('Thanks for clicking', this);
+                },
+                mouseleave: function () {
+                    console.log("mouseleave");
+                }
+            });
+        $(document).keydown(function () {
+            alert('You pressed down a key');
+        });
+        $('.h').dblclick(function () {
+            $(this).hide();
+        });
+        $("#p1").hover(function () {
+            alert("You entered p1!");
+        },
+            function () {
+                alert("Bye! You now leave p1!");
+            });
+        });
+        $(document).ready(function () {
+            $("input").focus(function () {
+                //The function is executed when the form field gets focus
+                $(this).css("background-color", "yellow");
+            });
+            $("input").blur(function () {
+                //The function is executed when the form field loses focus:
+                $(this).css("background-color", "green");
+            });
+            
+    $('#wiki').hide(3000, function () {
+        console.log("hidden");
+    }); 
+    $('#wiki').show(3000, function () {
+        console.log("show");
+    }); 
+    $('#but').click(function () {
+        $('#wiki').fadeOut(5000);
+        $('#wiki').fadeIn(5000);
+       // $('#wiki').fadeToggle(5000);//fadeOut then fadeIn
+       $("#wiki").fadeTo("slow", 0.15);
+
+    });
+        // Slide methods - speed and callback parameters are optional
+    // $('#wiki').slideUp(1000, function(){
+    //     console.log('done');
+    // })
+    // $('#wiki').slideDown(1000)
+     $('#wiki').slideToggle(1000);
+     
+        $('#wiki').addClass('myclass')
+    $('#wiki').addClass('myclass2')
+        });
+</script>
+
+</html>
